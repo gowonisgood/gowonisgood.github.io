@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gowon Han - Security Researcher</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      background-color: #f8f9fa;
+      padding: 2rem 0;
+      border-bottom: 1px solid #e9ecef;
+      text-align: left;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #2c3e50;
+    }
+    header p {
+      margin: 0 0 0 0;
+      font-size: 1.2rem;
+      color: #7f8c8d;
+    }
+    .links {
+      margin-top: 0.01rem;
+    }
+    .links a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    .profile-photo {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      display: block;
+      margin-top: 0;
+      border-radius: 8px;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    .about-content {
+      max-width: 800px;
+      margin: 0;
+      text-align: left;
+    }
+    .experience-item, .publication-item, .project-item {
+      margin-bottom: 2rem;
+    }
+    .experience-item h3, .publication-item h3, .project-item h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    .skill-item {
+      margin-bottom: 1rem;
+    }
+    .skill-item h4 {
+      margin: 0;
+      color: #2c3e50;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile-photo {
+        width: 140px;
+        height: 140px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      section {
+        padding: 2rem 0;
+      }
+      section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="hero">
+        <h1>Gowon Han</h1>
+        <img src="profile.jpg" alt="Gowon Han" class="profile-photo">
+      </div>
+      <p>Security Researcher | Kernel & AI Agent Security</p>
+      <div class="links">
+        <p>Email: <a href="mailto:gowonisgood@pusan.ac.kr">gowonisgood@pusan.ac.kr</a></p>
+        <p>GitHub: <a href="https://github.com/gowonisgood">https://github.com/gowonisgood</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/gowon-han-a1399b345/">https://www.linkedin.com/in/gowon-han-a1399b345/</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0002-4074-6539">https://orcid.org/0009-0002-4074-6539</a></p>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-content">
+        <p>Computer Engineering student at Pusan National University with research focus on kernel-level security, binary exploitation, and AI agent security.</p>
+        <p>Experienced in WebAssembly security, Windows kernel internals, and real-time threat detection systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <h3>Undergraduate Researcher — CSLAB, PNU</h3>
+        <p><em>Jun 2024 – Jun 2025</em></p>
+        <ul>
+          <li>Designed and conducted experiments on WebAssembly security mechanisms</li>
+          <li>Ported and adapted comparison frameworks to ensure fair benchmarking</li>
+          <li>Evaluated memory protection techniques to enhance security within sandboxed execution environments</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>BoB (Best of the Best) 14th — Security Product Development Track</h3>
+        <p><em>Jul 2025 – Feb 2026</em></p>
+        <ul>
+          <li>Led MCP-based AI agent security project as PM</li>
+          <li>Designed event-based monitoring system for threat detection</li>
+          <li>Implemented detection logic for command injection and file exposure</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="container">
+      <h2>Publications</h2>
+      <div class="publication-item">
+        <h3>WARD: Memory Protection for Tiny Embedded Systems</h3>
+        <p><em>IEEE Access, 2026</em></p>
+      </div>
+      <div class="publication-item">
+        <h3>Performance and Security Trade-off of Canary Size in WebAssembly</h3>
+        <p><em>KTCCS Journal, 2025</em></p>
+      </div>
+      <div class="publication-item">
+        <h3>Comparative Analysis of WebAssembly Binary Security Techniques</h3>
+        <p><em>ACK 2024 (Silver Award)</em></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-item">
+        <h3>MCP DanDan</h3>
+        <ul>
+          <li>Open-source MCP security tool</li>
+          <li>Detects malicious behaviors in AI agent environments</li>
+          <li><a href="https://github.com/82ch/MCP-Dandan">https://github.com/82ch/MCP-Dandan</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skill-item">
+        <h4>Languages: C/C++, Python, WebAssembly</h4>
+      </div>
+      <div class="skill-item">
+        <h4>Systems: Linux, Windows Kernel</h4>
+      </div>
+      <div class="skill-item">
+        <h4>Security: Binary Exploitation, Reverse Engineering</h4>
+      </div>
+      <div class="skill-item">
+        <h4>Tools: IDA Pro, GDB, WinDbg, Pwntools</h4>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
