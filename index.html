@@ -3,119 +3,372 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gowon Han - Security Researcher</title>
+  <meta name="description" content="Gowon Han — Academic CV. Research interests in systems security, software security, and AI security.">
+  <title>Gowon Han — Curriculum Vitae</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Times New Roman', serif;
       margin: 0;
-      padding: 0;
-      background-color: #ffffff;
+      background: #ffffff;
       color: #333333;
-      line-height: 1.6;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 16px;
+      line-height: 1.5;
     }
+
     .container {
-      max-width: 1200px;
+      width: 100%;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
+
+    /* ---------- Header ---------- */
     header {
-      background-color: #f8f9fa;
-      padding: 2rem 0;
+      padding: 2rem 0 1.5rem;
+      background: #f8f9fa;
       border-bottom: 1px solid #e9ecef;
-      text-align: left;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #2c3e50;
-    }
-    header p {
-      margin: 0 0 0 0;
-      font-size: 1.2rem;
-      color: #7f8c8d;
-    }
-    .links {
-      margin-top: 0.01rem;
-    }
-    .links a {
-      color: #3498db;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .links a:hover {
-      text-decoration: underline;
-    }
-    .profile-photo {
-      width: 160px;
-      height: 160px;
-      object-fit: contain;
-      display: block;
-      margin-top: 0;
-      border-radius: 8px;
-    }
+
     .hero {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      gap: 0.3rem;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
     }
+
     .hero-text {
       flex: 1;
-      min-width: 280px;
+      min-width: 0;
     }
+
+    h1 {
+      margin: 0;
+      color: #2c3e50;
+      font-size: 2.3rem;
+      line-height: 1.2;
+    }
+
+    .headline {
+      margin: 0.5rem 0 0.75rem;
+      color: #555555;
+      font-size: 1.05rem;
+    }
+
+    .profile-photo {
+      display: block;
+      width: 120px;
+      height: 120px;
+      flex-shrink: 0;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .contact {
+      font-style: normal;
+      font-size: 0.95rem;
+    }
+
+    .contact p {
+      margin: 0.15rem 0;
+    }
+
+    .sep {
+      color: #999999;
+      padding: 0 0.35rem;
+    }
+
+    a {
+      color: #276a96;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+    }
+
+    /* ---------- Sections ---------- */
+    main {
+      padding-bottom: 1.5rem;
+    }
+
     section {
-      padding: 3rem 0;
+      padding: 1.1rem 0;
       border-bottom: 1px solid #e9ecef;
     }
+
     section:last-child {
       border-bottom: none;
     }
-    section h2 {
-      font-size: 2rem;
+
+    h2 {
+      margin: 0 0 0.65rem;
       color: #2c3e50;
-      margin-bottom: 1.5rem;
-      text-align: left;
+      font-size: 1.35rem;
+      line-height: 1.3;
     }
-    .about-content {
-      max-width: 800px;
-      margin: 0;
-      text-align: left;
-    }
-    .experience-item, .publication-item, .project-item {
-      margin-bottom: 2rem;
-    }
-    .experience-item h3, .publication-item h3, .project-item h3 {
-      margin-top: 0;
-      color: #2c3e50;
-    }
-    .skill-item {
-      margin-bottom: 1rem;
-    }
-    .skill-item h4 {
+
+    h3 {
       margin: 0;
       color: #2c3e50;
+      font-size: 1.05rem;
+      line-height: 1.4;
     }
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
+
+    .entry {
+      margin-bottom: 0.9rem;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry p {
+      margin: 0.1rem 0;
+    }
+
+    /* Title on the left, date on the right */
+    .entry-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .date {
+      flex-shrink: 0;
+      color: #555555;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    .org {
+      font-weight: normal;
+    }
+
+    ul {
+      margin: 0.3rem 0 0;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin: 0.12rem 0;
+    }
+
+    /* Fill in before submission; visible on screen and in print */
+    .todo {
+      color: #b03a2e;
+    }
+
+    /* ---------- Publications ---------- */
+    .publications {
+      margin: 0;
+      padding-left: 1.4rem;
+    }
+
+    .publications > li {
+      margin-bottom: 0.7rem;
+      padding-left: 0.15rem;
+    }
+
+    .publications > li:last-child {
+      margin-bottom: 0;
+    }
+
+    .pub-title {
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    .pub-authors,
+    .pub-meta {
+      display: block;
+    }
+
+    .author-self {
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .pub-venue {
+      font-style: italic;
+    }
+
+    .pub-award {
+      font-weight: bold;
+    }
+
+    .pub-note {
+      margin: 0.4rem 0 0;
+      color: #555555;
+      font-size: 0.85em;
+    }
+
+    /* ---------- Skills ---------- */
+    .skills {
+      margin: 0;
+    }
+
+    .skills > div {
+      display: flex;
+      gap: 0.5rem;
+      margin: 0.2rem 0;
+    }
+
+    .skills dt {
+      flex: 0 0 150px;
+      font-weight: bold;
+    }
+
+    .skills dd {
+      margin: 0;
+    }
+
+    /* ---------- Small screens ---------- */
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 16px;
       }
-      .profile-photo {
-        width: 140px;
-        height: 140px;
+
+      header {
+        padding: 1.5rem 0 1rem;
       }
-      header h1 {
+
+      h1 {
         font-size: 2rem;
       }
-      header p {
-        font-size: 1rem;
+
+      .hero {
+        align-items: flex-start;
+        gap: 1rem;
       }
+
+      .profile-photo {
+        width: 90px;
+        height: 90px;
+      }
+
+      .headline {
+        font-size: 0.95rem;
+      }
+
+      .entry-head {
+        display: block;
+      }
+
+      .date {
+        display: block;
+      }
+
+      .skills > div {
+        display: block;
+      }
+    }
+
+    /* ---------- A4 print ---------- */
+    @page {
+      size: A4;
+      margin: 14mm 16mm;
+    }
+
+    @media print {
+      body {
+        color: #000000;
+        font-size: 10.5pt;
+        line-height: 1.3;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .container {
+        max-width: none;
+        padding: 0;
+      }
+
+      header {
+        padding: 0 0 7pt;
+        background: #ffffff;
+        border-bottom: 1px solid #cccccc;
+      }
+
+      h1 {
+        font-size: 22pt;
+      }
+
+      .headline {
+        margin: 3pt 0 5pt;
+        font-size: 11pt;
+      }
+
+      .contact {
+        font-size: 9.5pt;
+      }
+
+      .profile-photo {
+        width: 24mm;
+        height: 24mm;
+      }
+
+      main {
+        padding-bottom: 0;
+      }
+
       section {
-        padding: 2rem 0;
+        padding: 7pt 0;
+        border-color: #cccccc;
       }
-      section h2 {
-        font-size: 1.5rem;
+
+      h2 {
+        margin-bottom: 4pt;
+        font-size: 12.5pt;
+        break-after: avoid;
+      }
+
+      h3 {
+        font-size: 10.5pt;
+        break-after: avoid;
+      }
+
+      h1,
+      h2,
+      h3,
+      .pub-title {
+        color: #000000;
+      }
+
+      .entry,
+      .publications > li {
+        margin-bottom: 5pt;
+        break-inside: avoid;
+      }
+
+      ul {
+        margin-top: 2pt;
+      }
+
+      li {
+        margin: 1pt 0;
+      }
+
+      p,
+      li {
+        orphans: 2;
+        widows: 2;
+      }
+
+      /* Links stay clickable in the PDF; keep them dark but distinguishable */
+      a {
+        color: #1a4f72;
+        text-decoration: none;
+      }
+
+      .skills dt {
+        flex-basis: 110pt;
       }
     }
   </style>
@@ -124,101 +377,134 @@
   <header>
     <div class="container">
       <div class="hero">
-        <h1>Gowon Han</h1>
+        <div class="hero-text">
+          <h1>Gowon Han</h1>
+          <p class="headline">Systems Security | Software Security | AI Security</p>
+          <address class="contact">
+            <p>
+              Email: <a href="mailto:gowonisgood@pusan.ac.kr">gowonisgood@pusan.ac.kr</a>
+            </p>
+            <p>
+              GitHub: <a href="https://github.com/gowonisgood">github.com/gowonisgood</a>
+              <span class="sep">|</span>
+              <a href="https://www.linkedin.com/in/gowon-han-a1399b345/">LinkedIn</a>
+              <span class="sep">|</span>
+              ORCID: <a href="https://orcid.org/0009-0002-4074-6539">0009-0002-4074-6539</a>
+            </p>
+          </address>
+        </div>
+        <!-- Optional: delete this line if space is needed -->
         <img src="profile.jpg" alt="Gowon Han" class="profile-photo">
-      </div>
-      <p>Security Researcher | Kernel & AI Agent Security</p>
-      <div class="links">
-        <p>Email: <a href="mailto:gowonisgood@pusan.ac.kr">gowonisgood@pusan.ac.kr</a></p>
-        <p>GitHub: <a href="https://github.com/gowonisgood">https://github.com/gowonisgood</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/gowon-han-a1399b345/">https://www.linkedin.com/in/gowon-han-a1399b345/</a></p>
-        <p>ORCID: <a href="https://orcid.org/0009-0002-4074-6539">https://orcid.org/0009-0002-4074-6539</a></p>
       </div>
     </div>
   </header>
 
-  <section id="about">
-    <div class="container">
-      <h2>About</h2>
-      <div class="about-content">
-        <p>Computer Engineering student at Pusan National University with research focus on kernel-level security, binary exploitation, and AI agent security.</p>
-        <p>Experienced in WebAssembly security, Windows kernel internals, and real-time threat detection systems.</p>
-      </div>
-    </div>
-  </section>
+  <main class="container">
+    <section id="education">
+      <h2>Education</h2>
 
-  <section id="experience">
-    <div class="container">
-      <h2>Experience</h2>
-      <div class="experience-item">
-        <h3>Undergraduate Researcher — CSLAB, PNU</h3>
-        <p><em>Jun 2024 – Jun 2025</em></p>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Pusan National University</h3>
+          <span class="date">Mar 2023 – Present</span>
+        </div>
+        <p>B.S. in Computer Science and Engineering</p>
+          <p>GPA: 4.05 / 4.5</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Technical University of Munich (TUM)</h3>
+          <span class="date">Oct 2026 – Mar 2027</span>
+        </div>
+        <p>Exchange Student</p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Research and Technical Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Undergraduate Researcher <span class="org">— CSLAB, Pusan National University</span></h3>
+          <span class="date">Jun 2024 – Jun 2025</span>
+        </div>
         <ul>
-          <li>Designed and conducted experiments on WebAssembly security mechanisms</li>
-          <li>Ported and adapted comparison frameworks to ensure fair benchmarking</li>
-          <li>Evaluated memory protection techniques to enhance security within sandboxed execution environments</li>
+          <li>Designed and conducted experiments on WebAssembly security mechanisms.</li>
+          <li>Ported FuzzM to embedded systems for comparative security evaluations.</li>
+          <li>Evaluated memory protection techniques in resource-constrained environments.</li>
         </ul>
       </div>
-      <div class="experience-item">
-        <h3>BoB (Best of the Best) 14th — Security Product Development Track</h3>
-        <p><em>Jul 2025 – Feb 2026</em></p>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>BoB (Best of the Best), 14th Cohort <span class="org">— Security Product Development Track</span></h3>
+          <span class="date">Jul 2025 – Feb 2026</span>
+        </div>
         <ul>
-          <li>Led MCP-based AI agent security project as PM</li>
-          <li>Designed event-based monitoring system for threat detection</li>
-          <li>Implemented detection logic for command injection and file exposure</li>
+          <li>
+            Led the development of MCP DanDan, an open-source security monitoring tool
+            for AI agent environments, as project manager
+            (<a href="https://github.com/82ch/MCP-Dandan">github.com/82ch/MCP-Dandan</a>).
+          </li>
+          <li>Designed an event-based monitoring system for detecting security threats.</li>
+          <li>Implemented detection logic for command injection and file exposure.</li>
         </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="publications">
-    <div class="container">
+    <section id="publications">
       <h2>Publications</h2>
-      <div class="publication-item">
-        <h3>WARD: Memory Protection for Tiny Embedded Systems</h3>
-        <p><em>IEEE Access, 2026</em></p>
-      </div>
-      <div class="publication-item">
-        <h3>Performance and Security Trade-off of Canary Size in WebAssembly</h3>
-        <p><em>KTCCS Journal, 2025</em></p>
-      </div>
-      <div class="publication-item">
-        <h3>Comparative Analysis of WebAssembly Binary Security Techniques</h3>
-        <p><em>ACK 2024 (Silver Award)</em></p>
-      </div>
-    </div>
-  </section>
 
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-item">
-        <h3>MCP DanDan</h3>
-        <ul>
-          <li>Open-source MCP security tool</li>
-          <li>Detects malicious behaviors in AI agent environments</li>
-          <li><a href="https://github.com/82ch/MCP-Dandan">https://github.com/82ch/MCP-Dandan</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+      <ol class="publications">
+        <li>
+          <span class="pub-title">WARD: Efficient Memory Protection for WebAssembly on Tiny Embedded Systems</span>
+          <span class="pub-authors">Chaewon Shin, <strong class="author-self">Gowon Han</strong>, Suhyeon Song, Jinsun Park, Yoonho Choi, and Donghyun Kwon*</span>
+          <span class="pub-meta">
+            <span class="pub-venue">IEEE Access</span> — International Journal, 2026.
+            <a href="https://doi.org/10.1109/ACCESS.2025.3650447">doi:10.1109/ACCESS.2025.3650447</a>
+          </span>
+        </li>
 
-  <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="skill-item">
-        <h4>Languages: C/C++, Python, WebAssembly</h4>
-      </div>
-      <div class="skill-item">
-        <h4>Systems: Linux, Windows Kernel</h4>
-      </div>
-      <div class="skill-item">
-        <h4>Security: Binary Exploitation, Reverse Engineering</h4>
-      </div>
-      <div class="skill-item">
-        <h4>Tools: IDA Pro, GDB, WinDbg, Pwntools</h4>
-      </div>
-    </div>
-  </section>
+        <li>
+          <span class="pub-title">Performance and Security Analysis of Canary Size Adjustment in WebAssembly</span>
+          <span class="pub-authors"><strong class="author-self">Gowon Han</strong>, Chaewon Shin, and Donghyun Kwon*</span>
+          <span class="pub-meta">
+            <span class="pub-venue">KTCCS</span> — Korean Journal, 2025.
+            <a href="https://doi.org/10.3745/TKIPS.2025.14.4.224">doi:10.3745/TKIPS.2025.14.4.224</a>
+          </span>
+        </li>
+
+        <li>
+          <span class="pub-title">Comparative Analysis of WebAssembly Security Techniques</span>
+          <span class="pub-authors"><strong class="author-self">Gowon Han</strong>, Chaewon Shin, and Donghyun Kwon*</span>
+          <span class="pub-meta">
+            <span class="pub-venue">ACK</span> — Korean Conference, <span class="pub-award">Silver Award</span>, 2024.
+            <a href="https://doi.org/10.3745/PKIPS.y2024m10a.195">doi:10.3745/PKIPS.y2024m10a.195</a>
+          </span>
+        </li>
+      </ol>
+      <p class="pub-note">* Corresponding author</p>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+
+      <dl class="skills">
+        <div>
+          <dt>Programming</dt>
+          <dd>C/C++, Python</dd>
+        </div>
+        <div>
+          <dt>Systems &amp; Security</dt>
+          <dd>Linux, WebAssembly, Embedded Systems, Memory Protection</dd>
+        </div>
+        <div>
+          <dt>Research</dt>
+          <dd>Experimental Evaluation, Security Benchmarking</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
 </body>
 </html>
