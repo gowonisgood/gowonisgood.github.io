@@ -53,9 +53,15 @@
     }
 
     .headline {
-      margin: 0.5rem 0 0.75rem;
+      margin: 0.5rem 0 0.25rem;
       color: #555555;
       font-size: 1.05rem;
+    }
+
+    .interests {
+      margin: 0 0 0.75rem;
+      color: #777777;
+      font-size: 0.875rem;
     }
 
     .profile-photo {
@@ -209,26 +215,6 @@
       font-size: 0.85em;
     }
 
-    /* ---------- Skills ---------- */
-    .skills {
-      margin: 0;
-    }
-
-    .skills > div {
-      display: flex;
-      gap: 0.5rem;
-      margin: 0.2rem 0;
-    }
-
-    .skills dt {
-      flex: 0 0 190px;
-      font-weight: bold;
-    }
-
-    .skills dd {
-      margin: 0;
-    }
-
     /* ---------- Small screens ---------- */
     @media (max-width: 600px) {
       .container {
@@ -257,15 +243,15 @@
         font-size: 0.95rem;
       }
 
+      .interests {
+        font-size: 0.8rem;
+      }
+
       .entry-head {
         display: block;
       }
 
       .date {
-        display: block;
-      }
-
-      .skills > div {
         display: block;
       }
     }
@@ -301,8 +287,13 @@
       }
 
       .headline {
-        margin: 3pt 0 5pt;
+        margin: 3pt 0 1pt;
         font-size: 11pt;
+      }
+
+      .interests {
+        margin: 0 0 5pt;
+        font-size: 9.5pt;
       }
 
       .contact {
@@ -366,10 +357,6 @@
         color: #1a4f72;
         text-decoration: none;
       }
-
-      .skills dt {
-        flex-basis: 140pt;
-      }
     }
   </style>
 </head>
@@ -380,6 +367,7 @@
         <div class="hero-text">
           <h1>Gowon Han</h1>
           <p class="headline">Systems Security | Software Security | AI Security</p>
+          <p class="interests">Memory Safety · Fuzzing · Binary Analysis · Runtime Security · WebAssembly · Embedded Systems</p>
           <address class="contact">
             <p>
               Email: <a href="mailto:gowonisgood@pusan.ac.kr">gowonisgood@pusan.ac.kr</a>
@@ -409,7 +397,7 @@
           <span class="date">Mar 2023 – Present</span>
         </div>
         <p>B.S. in Computer Science and Engineering</p>
-          <p>GPA: 4.05 / 4.5</p>
+          <p>GPA: 4.11 / 4.5</p>
       </div>
 
       <div class="entry">
@@ -486,25 +474,6 @@
         </li>
       </ol>
       <p class="pub-note">* Corresponding author</p>
-    </section>
-
-    <section id="skills">
-      <h2>Technical Skills</h2>
-
-      <dl class="skills">
-        <div>
-          <dt>Programming Languages</dt>
-          <dd>C, C++, Python, Java</dd>
-        </div>
-        <div>
-          <dt>Systems &amp; Platforms</dt>
-          <dd>Linux, Windows, WebAssembly, Embedded Systems</dd>
-        </div>
-        <div>
-          <dt>Security</dt>
-          <dd>Fuzzing, Binary Analysis, Memory Safety, Runtime Analysis</dd>
-        </div>
-      </dl>
     </section>
   </main>
 </body>
