@@ -64,15 +64,6 @@
       font-size: 0.875rem;
     }
 
-    .profile-photo {
-      display: block;
-      width: 120px;
-      height: 120px;
-      flex-shrink: 0;
-      object-fit: contain;
-      border-radius: 4px;
-    }
-
     .contact {
       font-style: normal;
       font-size: 0.95rem;
@@ -144,6 +135,32 @@
       align-items: baseline;
       justify-content: space-between;
       gap: 1rem;
+    }
+
+    /* Education: institutions side by side, date under each name */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 2rem;
+      row-gap: 0.9rem;
+    }
+
+    .edu-grid > .entry {
+      margin-bottom: 0;
+    }
+
+    .edu-grid > .entry + .entry {
+      padding-left: 2rem;
+      margin-left: -1rem;
+      border-left: 1px solid #e9ecef;
+    }
+
+    .edu-grid .entry-head {
+      display: block;
+    }
+
+    .edu-grid .date {
+      display: block;
     }
 
     .date {
@@ -234,11 +251,6 @@
         gap: 1rem;
       }
 
-      .profile-photo {
-        width: 90px;
-        height: 90px;
-      }
-
       .headline {
         font-size: 0.95rem;
       }
@@ -253,6 +265,16 @@
 
       .date {
         display: block;
+      }
+
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .edu-grid > .entry + .entry {
+        padding-left: 0;
+        margin-left: 0;
+        border-left: none;
       }
     }
 
@@ -300,11 +322,6 @@
         font-size: 9.5pt;
       }
 
-      .profile-photo {
-        width: 24mm;
-        height: 24mm;
-      }
-
       main {
         padding-bottom: 0;
       }
@@ -336,6 +353,14 @@
       .publications > li {
         margin-bottom: 5pt;
         break-inside: avoid;
+      }
+
+      .edu-grid > .entry {
+        margin-bottom: 0;
+      }
+
+      .edu-grid > .entry + .entry {
+        border-color: #cccccc;
       }
 
       ul {
@@ -371,18 +396,15 @@
           <address class="contact">
             <p>
               Email: <a href="mailto:gowonisgood@pusan.ac.kr">gowonisgood@pusan.ac.kr</a>
-            </p>
-            <p>
-              GitHub: <a href="https://github.com/gowonisgood">github.com/gowonisgood</a>
               <span class="sep">|</span>
-              <a href="https://www.linkedin.com/in/gowon-han-a1399b345/">LinkedIn</a>
+              GitHub: <a href="https://github.com/gowonisgood" target="_blank" rel="noopener noreferrer">github.com/gowonisgood</a>
               <span class="sep">|</span>
-              ORCID: <a href="https://orcid.org/0009-0002-4074-6539">0009-0002-4074-6539</a>
+              <a href="https://www.linkedin.com/in/gowon-han-a1399b345/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <span class="sep">|</span>
+              ORCID: <a href="https://orcid.org/0009-0002-4074-6539" target="_blank" rel="noopener noreferrer">0009-0002-4074-6539</a>
             </p>
           </address>
         </div>
-        <!-- Optional: delete this line if space is needed -->
-        <img src="profile.jpg" alt="Gowon Han" class="profile-photo">
       </div>
     </div>
   </header>
@@ -391,21 +413,23 @@
     <section id="education">
       <h2>Education</h2>
 
-      <div class="entry">
-        <div class="entry-head">
-          <h3>Pusan National University</h3>
-          <span class="date">Mar 2023 – Present</span>
+      <div class="edu-grid">
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Pusan National University</h3>
+            <span class="date">Mar 2023 – Present</span>
+          </div>
+          <p>B.S. in Computer Science and Engineering</p>
+          <p>GPA: 4.11 / 4.5 <span class="sep">|</span> Class Rank: 14 / 133 (Top 11%)</p>
         </div>
-        <p>B.S. in Computer Science and Engineering</p>
-          <p>GPA: 4.11 / 4.5</p>
-      </div>
 
-      <div class="entry">
-        <div class="entry-head">
-          <h3>Technical University of Munich (TUM)</h3>
-          <span class="date">Oct 2026 – Mar 2027</span>
+        <div class="entry">
+          <div class="entry-head">
+            <h3>Technical University of Munich (TUM)</h3>
+            <span class="date">Oct 2026 – Mar 2027</span>
+          </div>
+          <p>Exchange Student</p>
         </div>
-        <p>Exchange Student</p>
       </div>
     </section>
 
@@ -414,13 +438,14 @@
 
       <div class="entry">
         <div class="entry-head">
-          <h3>Undergraduate Researcher <span class="org">— <a href="https://cslab-pnu.github.io/">CSLAB</a>, Pusan National University</span></h3>
+          <h3>Undergraduate Researcher <span class="org">— <a href="https://cslab-pnu.github.io/" target="_blank" rel="noopener noreferrer">CSLAB</a>, Pusan National University</span></h3>
           <span class="date">Jun 2024 – Jun 2025</span>
         </div>
         <ul>
-          <li>Designed and conducted experiments on WebAssembly security mechanisms.</li>
-          <li>Ported FuzzM to embedded systems for comparative security evaluations.</li>
-          <li>Evaluated memory protection techniques in resource-constrained environments.</li>
+          <li>Implemented four canary sizes (8–64 bytes) in FuzzM, evaluating performance through 1,000 repeated executions and security through 60-minute fuzzing sessions per benchmark.</li>
+          <li>Adapted FuzzM’s Rust-based stack and heap instrumentation for embedded WebAssembly environments, implementing call-site instrumentation for four imported heap management APIs.</li>
+          <li>Ported 55 BEEBS benchmarks and 12 real-world applications, and adapted 44 ASan security test modules to WAMR on RIOT-OS (256 KB SRAM), automating cross-compilation, instrumentation, and testing using Bash and Python.</li>
+          <li>Contributed to WARD’s security and performance evaluation, reporting a 70.1% memory error detection rate across six CWE categories and a 24.2% runtime overhead on BEEBS benchmarks.</li>
         </ul>
       </div>
 
@@ -429,15 +454,16 @@
           <h3>BoB (Best of the Best), 14th Cohort <span class="org">— Security Product Development Track</span></h3>
           <span class="date">Jul 2025 – Feb 2026</span>
         </div>
-        <p>South Korea’s selective, government-funded, project-based cybersecurity talent development program (<a href="https://bobedu.kr/home/kor/main.do">bobedu.kr</a>).</p>
+        <p>South Korea’s flagship government-funded cybersecurity leadership program (172 selected from 1,231 applicants nationwide; ~14% acceptance rate; <a href="https://bobedu.kr/home/kor/main.do" target="_blank" rel="noopener noreferrer">bobedu.kr</a>).</p>
         <ul>
           <li>
-            Led the development of MCP DanDan, an open-source security monitoring tool
-            for AI agent environments, as project manager
-            (<a href="https://github.com/82ch/MCP-Dandan">github.com/82ch/MCP-Dandan</a>).
+            Led a six-member team as project manager to develop MCP DanDan, an open-source MCP security framework
+            supporting Windows, macOS, and Linux
+            (<a href="https://github.com/82ch/MCP-Dandan" target="_blank" rel="noopener noreferrer">github.com/82ch/MCP-Dandan</a>).
           </li>
-          <li>Designed an event-based monitoring system for detecting security threats.</li>
-          <li>Implemented detection logic for command injection and file exposure.</li>
+          <li>Co-designed an event-driven monitoring architecture for real-time analysis of MCP communications across STDIO and HTTP/SSE transports, integrating five threat detection engines.</li>
+          <li>Implemented two threat detection engines for command injection and file system exposure, incorporating 30 YARA rules and risk-based scoring mechanisms.</li>
+          <li>Achieved 68 GitHub stars and 8 forks, with the project featured in nine community resources, including Awesome MCP Servers and Awesome MCP Security.</li>
         </ul>
       </div>
     </section>
@@ -451,7 +477,7 @@
           <span class="pub-authors">Chaewon Shin, <strong class="author-self">Gowon Han</strong>, Suhyeon Song, Jinsun Park, Yoonho Choi, and Donghyun Kwon*</span>
           <span class="pub-meta">
             <span class="pub-venue">IEEE Access</span> — International Journal, 2026.
-            <a href="https://doi.org/10.1109/ACCESS.2025.3650447">doi:10.1109/ACCESS.2025.3650447</a>
+            <a href="https://doi.org/10.1109/ACCESS.2025.3650447" target="_blank" rel="noopener noreferrer">doi:10.1109/ACCESS.2025.3650447</a>
           </span>
         </li>
 
@@ -460,7 +486,7 @@
           <span class="pub-authors"><strong class="author-self">Gowon Han</strong>, Chaewon Shin, and Donghyun Kwon*</span>
           <span class="pub-meta">
             <span class="pub-venue">KTCCS</span> — Korean Journal, 2025.
-            <a href="https://doi.org/10.3745/TKIPS.2025.14.4.224">doi:10.3745/TKIPS.2025.14.4.224</a>
+            <a href="https://doi.org/10.3745/TKIPS.2025.14.4.224" target="_blank" rel="noopener noreferrer">doi:10.3745/TKIPS.2025.14.4.224</a>
           </span>
         </li>
 
@@ -469,7 +495,7 @@
           <span class="pub-authors"><strong class="author-self">Gowon Han</strong>, Chaewon Shin, and Donghyun Kwon*</span>
           <span class="pub-meta">
             <span class="pub-venue">ACK</span> — Korean Conference, <span class="pub-award">Silver Award</span>, 2024.
-            <a href="https://doi.org/10.3745/PKIPS.y2024m10a.195">doi:10.3745/PKIPS.y2024m10a.195</a>
+            <a href="https://doi.org/10.3745/PKIPS.y2024m10a.195" target="_blank" rel="noopener noreferrer">doi:10.3745/PKIPS.y2024m10a.195</a>
           </span>
         </li>
       </ol>
